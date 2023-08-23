@@ -24,7 +24,7 @@ enable_testing()
 
 
 # add_executable(${PROJECT_NAME} src/main.cpp )
-add_executable(${PROJECT_NAME}-ut test/PizzeriaTest.cpp test/mocks/PizzaMock.hpp src/Pizza.cpp src/Pizza.hpp src/Pizzeria.cpp src/Funghi.cpp src/Margherita.cpp )
+add_executable(${PROJECT_NAME}-ut test/PizzeriaTest.cpp test/mocks/PizzaMock.hpp src/Pizza.cpp src/Pizza.hpp src/Pizzeria.cpp src/Funghi.cpp src/Margherita.cpp src/TimeDummy.hpp )
 
 # target_link_libraries(${PROJECT_NAME} SRC )
 target_link_libraries(${PROJECT_NAME}-ut gtest_main)
