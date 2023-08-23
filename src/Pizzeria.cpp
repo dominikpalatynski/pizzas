@@ -4,9 +4,10 @@
 #include <thread>
 #include <iostream>
 
-Pizzeria::Pizzeria(std::string const & name)
+Pizzeria::Pizzeria(std::string const & name,std::unique_ptr<TimeDelay> timeD)
     : name_(name)
     , orders_()
+    , timeDelay_(std::move(timeD))
 {}
 
 int Pizzeria::makeOrder(Pizzas pizzas)
@@ -49,7 +50,8 @@ void Pizzeria::bakePizzas(int orderId)
         for (const auto & pizza : pizzas)
         {
             std::cout << "Baking " << pizza->getName() << std::endl;
-            std::this_thread::sleep_for(pizza->getBakingTime());
+            // std::this_thread::sleep_for(pizza->getBakingTime());
+            timeDelay_->sleepFor(pizza->getBakingTime());
         }
         std::get<Status>(*order) = Status::Baked;
     }

@@ -5,6 +5,11 @@ Pizza::Pizza(std::string const & name, double price, minutes bakingTime)
     , price_(price)
     , bakingTime_(bakingTime)
 {}
+Pizza::Pizza()
+    : name_("Default")
+    , price_(40)
+    , bakingTime_(10)
+{}
 
 std::string Pizza::getName() const
 {
@@ -13,7 +18,7 @@ std::string Pizza::getName() const
 
 double Pizza::getPrice() const
 {
-    return 30.0;
+    return price_;
 }
 
 minutes Pizza::getBakingTime() const

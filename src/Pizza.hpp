@@ -9,6 +9,7 @@ using minutes = std::chrono::seconds;   // To simulate time flow ;)
 class Pizza
 {
 public:
+    Pizza();
     Pizza(std::string const & name, double price, minutes bakingTime);
     virtual ~Pizza() = default;
     virtual std::string getName() const;
